@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cleaner.model.Clearner;
+import com.cleaner.model.Cleaner;
 import com.cleaner.service.CleanerService;
 
 @RestController
@@ -24,22 +24,22 @@ public class CleanerController {
     private CleanerService cleanerService;
 
     @GetMapping
-    public List<Clearner> getAllCleaners() {
+    public List<Cleaner> getAllCleaners() {
         return cleanerService.getAllCleaners();
     }
 
     @GetMapping("/{id}")
-    public Clearner getCleanerById(@PathVariable String id) {
+    public Cleaner getCleanerById(@PathVariable String id) {
         return cleanerService.getCleanerById(id);
     }
 
     @PostMapping
-    public Clearner createCleaner(@RequestBody Clearner cleaner) {
+    public Cleaner createCleaner(@RequestBody Cleaner cleaner) {
         return cleanerService.createCleaner(cleaner);
     }
 
     @PutMapping("/{id}")
-    public Clearner updateCleaner(@PathVariable String id, @RequestBody Clearner cleaner) {
+    public Cleaner updateCleaner(@PathVariable String id, @RequestBody Cleaner cleaner) {
         return cleanerService.updateCleaner(id, cleaner);
     }
 

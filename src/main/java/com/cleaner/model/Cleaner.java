@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Document(collection = "cleaners")
-public class Clearner {
+public class Cleaner {
     @Id
     private String id;  
     private String fullname;

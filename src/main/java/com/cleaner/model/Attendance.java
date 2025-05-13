@@ -16,7 +16,7 @@ public class Attendance {
     private String id;
 
     @DBRef
-    private Clearner cleaner;
+    private Cleaner cleaner;
 
     private LocalDate date;
     private LocalDateTime checkInTime;

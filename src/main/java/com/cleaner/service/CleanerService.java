@@ -3,7 +3,7 @@ package com.cleaner.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cleaner.model.Clearner;
+import com.cleaner.model.Cleaner;
 import com.cleaner.repository.CleanerRepository;
 
 @Service
@@ -12,24 +12,23 @@ public class CleanerService {
     @Autowired
     private CleanerRepository cleanerRepository;
 
-    public List<Clearner> getAllCleaners() {
+    public List<Cleaner> getAllCleaners() {
         return cleanerRepository.findAll();
     }
 
-    public Clearner getCleanerById(String id) {
+    public Cleaner getCleanerById(String id) {
         return cleanerRepository.findById(id).orElse(null);
     }
 
-    public Clearner createCleaner(Clearner cleaner) {
+    public Cleaner createCleaner(Cleaner cleaner) {
         if (cleanerRepository.findByEmail(cleaner.getEmail()).isPresent()) {
-            throw new RuntimeException("Cleaner is already exists");
+            throw new RuntimeException("Cleaner already exists");
         }
         return cleanerRepository.save(cleaner);
-
     }
 
-    public Clearner updateCleaner(String id, Clearner cleaner) {
-        Clearner existingCleaner = getCleanerById(id);
+    public Cleaner updateCleaner(String id, Cleaner cleaner) {
+        Cleaner existingCleaner = getCleanerById(id);
         if (existingCleaner == null) {
             throw new RuntimeException("Cleaner not found");
         }
@@ -38,6 +37,5 @@ public class CleanerService {
 
     public void deleteCleaner(String id) {
         cleanerRepository.deleteById(id);
-
     }
 }
