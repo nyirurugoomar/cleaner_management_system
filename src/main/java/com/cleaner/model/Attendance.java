@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @Data
 @Document(collection = "attendances")
 public class Attendance {
-
     @Id
     private String id;
 
@@ -21,8 +20,7 @@ public class Attendance {
     private LocalDate date;
     private LocalDateTime checkInTime;
     private LocalDateTime checkOutTime;
-
-    private Location location;
-
+    private String location;
     private AttendanceStatus status = AttendanceStatus.PRESENT;
+    private String note;
 }

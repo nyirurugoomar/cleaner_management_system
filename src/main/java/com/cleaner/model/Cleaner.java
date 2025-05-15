@@ -14,7 +14,7 @@ public class Cleaner {
     private String phone;
     private Gender gender; 
     private String address;
-    private Number nationalId;
+    private Long nationalId;
     private String dateOfBirth;
     private Role role = Role.CLEANER;
     private Status status = Status.Active;
