@@ -76,6 +76,7 @@ $RECYCLE.BIN/
 application-local.properties
 application-dev.properties
 application-prod.properties
+application.properties
 
 ### Logs ###
 logs/
